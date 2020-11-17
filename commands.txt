@@ -1,0 +1,14 @@
+python train.py --dataset SIXray --dataroot ./data/SIXray --isize 64 --niter 25 --display --display_id 1
+
+python train.py --dataset OPInSIXray --dataroot ./data/OPInSIXray --isize 64 --niter 25 --display --display_id 1
+
+
+open visualization container at first:
+	python -m visdom.server
+if you want to use the visdom server, you should change the display_id to a non-zero value. To view training results and loss plots, run python -m visdom.server and click the URL http://localhost:8097.
+
+
+python train.py --dataset SIXray --dataroot ./data/SIXray --isize 64 --load_weights --phase test
+
+python train.py --dataset OPInSIXray --dataroot ./data/OPInSIXray --isize 64 --load_weights --phase test
+
